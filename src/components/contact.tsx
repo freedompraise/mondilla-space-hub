@@ -24,7 +24,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-black py-20 text-white">
+    <section id="contact" className="bg-gray-50 dark:bg-black py-20 text-gray-900 dark:text-white">
       <div className="container">
         <motion.div
           className="text-center mb-16"
@@ -43,7 +43,7 @@ export function Contact() {
             </span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-600 dark:text-white/70 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
             Ready to transform your team's collaboration? Let's discuss how Mondilla Connect 
@@ -60,14 +60,14 @@ export function Contact() {
             viewport={{ once: true }}
           >
             <motion.h3 
-              className="text-2xl font-bold text-white mb-8"
+              className="text-2xl font-bold text-gray-900 dark:text-white mb-8"
               variants={itemVariants}
             >
               Let's start a conversation
             </motion.h3>
             
             <motion.p 
-              className="text-white/70 mb-8 leading-relaxed"
+              className="text-gray-600 dark:text-white/70 mb-8 leading-relaxed"
               variants={itemVariants}
             >
               Whether you have questions about our platform, need a custom solution, 
@@ -86,8 +86,8 @@ export function Contact() {
                   <Envelope className="w-6 h-6 text-white" weight="fill" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">Email</p>
-                  <p className="text-white/70">hello@mondilla.com</p>
+                  <p className="font-medium text-gray-900 dark:text-white">Email</p>
+                  <p className="text-gray-600 dark:text-white/70">hello@mondilla.com</p>
                 </div>
               </motion.div>
 
@@ -99,8 +99,8 @@ export function Contact() {
                   <Phone className="w-6 h-6 text-white" weight="fill" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">Phone</p>
-                  <p className="text-white/70">+1 (555) 123-4567</p>
+                  <p className="font-medium text-gray-900 dark:text-white">Phone</p>
+                  <p className="text-gray-600 dark:text-white/70">+1 (555) 123-4567</p>
                 </div>
               </motion.div>
 
@@ -112,18 +112,18 @@ export function Contact() {
                   <MapPin className="w-6 h-6 text-white" weight="fill" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">Office</p>
-                  <p className="text-white/70">San Francisco, CA</p>
+                  <p className="font-medium text-gray-900 dark:text-white">Office</p>
+                  <p className="text-gray-600 dark:text-white/70">San Francisco, CA</p>
                 </div>
               </motion.div>
             </motion.div>
 
             <motion.div 
-              className="mt-8 p-6 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 rounded-xl border border-white/10"
+              className="mt-8 p-6 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 rounded-xl border border-gray-200 dark:border-white/10"
               variants={itemVariants}
             >
-              <h4 className="font-semibold text-white mb-2">Response Time</h4>
-              <p className="text-white/70 text-sm">
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Response Time</h4>
+              <p className="text-gray-600 dark:text-white/70 text-sm">
                 We typically respond to all inquiries within 24 hours during business days.
               </p>
             </motion.div>

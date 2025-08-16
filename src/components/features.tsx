@@ -15,7 +15,7 @@ export function Features() {
   }
 
   return (
-    <section id="features" className="bg-gradient-to-b from-black to-gray-900 py-20 text-white">
+    <section id="features" className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-black dark:to-gray-900 py-20 text-gray-900 dark:text-white">
       <div className="container">
         <motion.div
           variants={containerVariants}
@@ -34,7 +34,7 @@ export function Features() {
             </span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-600 dark:text-white/70 max-w-3xl mx-auto leading-relaxed"
             variants={containerVariants}
           >
             From shared workspaces to intelligent task management, Mondilla Connect 

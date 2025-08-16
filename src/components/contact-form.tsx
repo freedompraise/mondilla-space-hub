@@ -100,8 +100,8 @@ export function ContactForm() {
         transition={{ duration: 0.5 }}
       >
         <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" weight="fill" />
-        <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-        <p className="text-white/70">Thank you for contacting us. We'll get back to you soon.</p>
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
+        <p className="text-gray-600 dark:text-white/70">Thank you for contacting us. We'll get back to you soon.</p>
       </motion.div>
     )
   }
@@ -116,7 +116,7 @@ export function ContactForm() {
       viewport={{ once: true }}
     >
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
           Name *
         </label>
         <input
@@ -124,10 +124,10 @@ export function ContactForm() {
           id="name"
           value={formData.name}
           onChange={(e) => handleInputChange('name', e.target.value)}
-          className={`w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder-white/50 focus:outline-none focus:ring-2 transition-all ${
+          className={`w-full px-4 py-3 rounded-lg border bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 transition-all ${
             errors.name 
               ? 'border-red-400 focus:ring-red-400/50' 
-              : 'border-white/20 focus:border-cyan-400 focus:ring-cyan-400/50'
+              : 'border-gray-300 dark:border-white/20 focus:border-cyan-400 focus:ring-cyan-400/50'
           }`}
           placeholder="Your full name"
         />
@@ -143,7 +143,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
           Email *
         </label>
         <input
@@ -151,10 +151,10 @@ export function ContactForm() {
           id="email"
           value={formData.email}
           onChange={(e) => handleInputChange('email', e.target.value)}
-          className={`w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder-white/50 focus:outline-none focus:ring-2 transition-all ${
+          className={`w-full px-4 py-3 rounded-lg border bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 transition-all ${
             errors.email 
               ? 'border-red-400 focus:ring-red-400/50' 
-              : 'border-white/20 focus:border-cyan-400 focus:ring-cyan-400/50'
+              : 'border-gray-300 dark:border-white/20 focus:border-cyan-400 focus:ring-cyan-400/50'
           }`}
           placeholder="your.email@example.com"
         />
@@ -170,7 +170,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
           Message *
         </label>
         <textarea
@@ -178,10 +178,10 @@ export function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(e) => handleInputChange('message', e.target.value)}
-          className={`w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder-white/50 focus:outline-none focus:ring-2 transition-all resize-none ${
+          className={`w-full px-4 py-3 rounded-lg border bg-white dark:bg-white/5 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 transition-all resize-none ${
             errors.message 
               ? 'border-red-400 focus:ring-red-400/50' 
-              : 'border-white/20 focus:border-cyan-400 focus:ring-cyan-400/50'
+              : 'border-gray-300 dark:border-white/20 focus:border-cyan-400 focus:ring-cyan-400/50'
           }`}
           placeholder="Tell us about your project or how we can help..."
         />

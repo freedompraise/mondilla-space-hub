@@ -54,10 +54,10 @@ export function MondillaLogo({ className = '', size = 'md' }: MondillaLogoProps)
 
       {/* Text */}
       <div className="flex flex-col">
-        <h1 className="font-bold text-white text-xl tracking-tight">
+        <h1 className="font-bold text-gray-900 dark:text-white text-xl tracking-tight">
           Mondilla
         </h1>
-        <p className="text-sm text-white/70 -mt-1">
+        <p className="text-sm text-gray-600 dark:text-white/70 -mt-1">
           ...Coding your ideas
         </p>
       </div>

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { motion } from 'framer-motion'
-import { Users, ChatCircle, Calendar } from '@phosphor-icons/react'
+import { ArrowDown } from '@phosphor-icons/react'
 
 export function Hero() {
   const containerVariants = {
@@ -26,8 +26,15 @@ export function Hero() {
     }
   }
 
+  const handleScrollDown = () => {
+    const featuresSection = document.getElementById('features')
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-black dark:via-gray-900 dark:to-black pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
@@ -36,110 +43,141 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
-          className="text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Badge */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
           <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 mb-8"
+            className="text-center lg:text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-white/70 text-sm">Now with AI-powered collaboration</span>
-          </motion.div>
+            {/* Main Headline */}
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+            >
+              Work together,{' '}
+              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                wherever you are
+              </span>
+            </motion.h1>
 
-          {/* Main Headline */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-          >
-            Work together,{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              wherever you are
-            </span>
-          </motion.h1>
+            {/* Subtitle */}
+            <motion.p
+              variants={itemVariants}
+              className="text-xl text-gray-600 dark:text-white/70 max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
+            >
+              Mondilla Connect brings remote teams together with shared workspaces, 
+              real-time messaging, and intelligent task management.
+            </motion.p>
 
-          {/* Subtitle */}
-          <motion.p
-            variants={itemVariants}
-            className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed"
-          >
-            Mondilla Connect brings remote teams together with shared workspaces, 
-            real-time messaging, and intelligent task management. 
-            Collaborate seamlessly across time zones and borders.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-          >
+            {/* CTA Button */}
             <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              onClick={handleScrollDown}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              variants={itemVariants}
             >
-              Start Free Trial
-            </motion.button>
-            <motion.button
-              className="px-8 py-4 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Watch Demo
+              Get Started
+              <ArrowDown className="w-5 h-5" />
             </motion.button>
           </motion.div>
 
-          {/* Feature Icons */}
+          {/* Illustration */}
           <motion.div
+            className="relative"
             variants={itemVariants}
-            className="flex justify-center items-center gap-8 md:gap-12 text-white/60"
+            initial="hidden"
+            animate="visible"
           >
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.1, color: 'white' }}
-              transition={{ duration: 0.2 }}
-            >
-              <Users className="w-6 h-6" />
-              <span className="text-sm">Team Collaboration</span>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.1, color: 'white' }}
-              transition={{ duration: 0.2 }}
-            >
-              <ChatCircle className="w-6 h-6" />
-              <span className="text-sm">Real-time Chat</span>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.1, color: 'white' }}
-              transition={{ duration: 0.2 }}
-            >
-              <Calendar className="w-6 h-6" />
-              <span className="text-sm">Task Management</span>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            <div className="relative w-full max-w-lg mx-auto">
+              {/* Main illustration container */}
+              <motion.div
+                className="relative bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl p-8 border border-white/10 backdrop-blur-sm"
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                {/* Workspace illustration */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  {/* Workspace cards */}
+                  <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                    <div className="w-full h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-md mb-2"></div>
+                    <div className="space-y-1">
+                      <div className="h-2 bg-white/30 rounded w-3/4"></div>
+                      <div className="h-2 bg-white/20 rounded w-1/2"></div>
+                    </div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                    <div className="w-full h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-md mb-2"></div>
+                    <div className="space-y-1">
+                      <div className="h-2 bg-white/30 rounded w-2/3"></div>
+                      <div className="h-2 bg-white/20 rounded w-1/3"></div>
+                    </div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                    <div className="w-full h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-md mb-2"></div>
+                    <div className="space-y-1">
+                      <div className="h-2 bg-white/30 rounded w-4/5"></div>
+                      <div className="h-2 bg-white/20 rounded w-2/5"></div>
+                    </div>
+                  </div>
+                </div>
 
-        {/* Floating Elements */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <div className="w-64 h-64 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-2xl"></div>
-        </motion.div>
+                {/* Chat interface */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
+                    <div className="flex-1">
+                      <div className="h-3 bg-white/40 rounded w-20 mb-1"></div>
+                      <div className="h-2 bg-white/20 rounded w-16"></div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-3 bg-white/30 rounded w-3/4"></div>
+                    <div className="h-3 bg-white/20 rounded w-1/2"></div>
+                  </div>
+                </div>
+
+                {/* Floating elements */}
+                <motion.div
+                  className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.div
+                  className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-400 rounded-full"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    y: [0, -5, 0]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </motion.div>
+
+              {/* Background glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl -z-10"></div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

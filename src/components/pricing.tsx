@@ -84,7 +84,7 @@ export function Pricing() {
   }
 
   return (
-    <section id="pricing" className="bg-gradient-to-b from-gray-900 to-black py-20 text-white">
+    <section id="pricing" className="bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-black py-20 text-gray-900 dark:text-white">
       <div className="container">
         <motion.div
           className="text-center mb-16"
@@ -103,7 +103,7 @@ export function Pricing() {
             </span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-600 dark:text-white/70 max-w-3xl mx-auto leading-relaxed"
             variants={cardVariants}
           >
             Choose the perfect plan for your team. All plans include a 14-day free trial.
@@ -123,7 +123,7 @@ export function Pricing() {
               className={`relative rounded-2xl border p-8 ${
                 tier.popular 
                   ? 'border-cyan-400 bg-gradient-to-b from-cyan-400/10 to-purple-500/10' 
-                  : 'border-white/20 bg-white/5'
+                  : 'border-gray-200 dark:border-white/20 bg-white/50 dark:bg-white/5'
               }`}
               variants={cardVariants}
               whileHover={{ y: -5 }}
@@ -139,11 +139,11 @@ export function Pricing() {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
-                <p className="text-white/70 mb-6">{tier.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tier.name}</h3>
+                <p className="text-gray-600 dark:text-white/70 mb-6">{tier.description}</p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-white">{tier.price}</span>
-                  <span className="text-white/70">{tier.period}</span>
+                  <span className="text-4xl font-bold text-gray-900 dark:text-white">{tier.price}</span>
+                  <span className="text-gray-600 dark:text-white/70">{tier.period}</span>
                 </div>
               </div>
 
@@ -151,7 +151,7 @@ export function Pricing() {
                 {tier.features.map((feature, featureIndex) => (
                   <motion.li
                     key={featureIndex}
-                    className="flex items-center gap-3 text-white/80"
+                    className="flex items-center gap-3 text-gray-700 dark:text-white/80"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
@@ -167,7 +167,7 @@ export function Pricing() {
                 className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 ${
                   tier.popular
                     ? 'bg-gradient-to-r from-cyan-400 to-purple-500 text-white hover:shadow-lg hover:shadow-purple-500/25'
-                    : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
+                    : 'bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 hover:bg-gray-200 dark:hover:bg-white/20'
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

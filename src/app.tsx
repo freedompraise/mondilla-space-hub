@@ -9,7 +9,7 @@ import { Footer } from './components/footer'
 export function App() {
   return (
     <motion.div 
-      className="min-h-screen antialiased bg-black"
+      className="min-h-screen antialiased bg-white dark:bg-black text-black dark:text-white transition-colors duration-300"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

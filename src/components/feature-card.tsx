@@ -46,7 +46,7 @@ export function FeatureCard({
   return (
     <motion.div
       key={id}
-      className="relative flex-1 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-8 text-center hover:bg-white/10 transition-all duration-300"
+      className="relative flex-1 rounded-xl border border-gray-200 dark:border-white/20 bg-white/50 dark:bg-white/5 backdrop-blur-sm px-6 py-8 text-center hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
       whileHover={{ y: -5 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -70,8 +70,8 @@ export function FeatureCard({
         <IconComponent className="h-8 w-8" weight="fill" />
       </motion.div>
       
-      <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-white/70 leading-relaxed">{description}</p>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{title}</h3>
+      <p className="text-gray-600 dark:text-white/70 leading-relaxed">{description}</p>
     </motion.div>
   )
 }

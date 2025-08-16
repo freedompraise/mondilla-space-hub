@@ -63,7 +63,7 @@ export function SocialMediaList() {
     <div className="flex gap-3">
       {socialMediaList.map(({ href, icon, name }) => (
         <a
-          className="text-white/50 hover:text-white/90"
+          className="text-gray-500 dark:text-white/50 hover:text-gray-700 dark:hover:text-white/90 transition-colors"
           href={href}
           key={name}
           aria-label={name}
