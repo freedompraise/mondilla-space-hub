@@ -27,40 +27,46 @@ export function Footer() {
     <footer className="border-t border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-black py-12 text-gray-600 dark:text-white/60">
       <div className="container">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* Logo and Description */}
-          <motion.div className="md:col-span-2" variants={itemVariants}>
+          <motion.div className="lg:col-span-2" variants={itemVariants}>
             <MondillaLogo size="md" className="mb-4" />
             <p className="text-gray-600 dark:text-white/70 leading-relaxed max-w-md">
               Empowering remote teams to collaborate seamlessly with intelligent 
               workspaces, real-time communication, and powerful project management tools.
             </p>
+            <div className="mt-6">
+              <SocialMediaList />
+            </div>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Product</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li><a href="#features" className="hover:text-gray-900 dark:hover:text-white transition-colors">Features</a></li>
               <li><a href="#pricing" className="hover:text-gray-900 dark:hover:text-white transition-colors">Pricing</a></li>
               <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Integrations</a></li>
               <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">API</a></li>
+              <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Documentation</a></li>
             </ul>
           </motion.div>
 
           {/* Company */}
           <motion.div variants={itemVariants}>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Company</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">About</a></li>
               <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Blog</a></li>
               <li><a href="#contact" className="hover:text-gray-900 dark:hover:text-white transition-colors">Contact</a></li>
               <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Terms of Service</a></li>
             </ul>
           </motion.div>
         </motion.div>
@@ -78,8 +84,10 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Mondilla Connect. All rights reserved.
             </span>
           </motion.div>
-          <motion.div variants={itemVariants}>
-            <SocialMediaList />
+          <motion.div className="text-center md:text-right" variants={itemVariants}>
+            <span className="text-sm text-gray-500 dark:text-white/50">
+              Made with ❤️ for remote teams
+            </span>
           </motion.div>
         </motion.div>
       </div>

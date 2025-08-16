@@ -46,7 +46,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <motion.div
-            className="text-center lg:text-left"
+            className="text-center lg:text-left lg:pl-8 xl:pl-12"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
