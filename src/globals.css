@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --rainbow-gradient:
+      rgba(252, 214, 255, 0.7), hsla(191, 100%, 58%, 0.7),
+      hsla(59, 100%, 75%, 0.7), hsla(336, 87%, 79%, 0.7);
+    --purple-gradient:
+      hsl(0, 0%, 0%), hsl(262, 67%, 15%) 34%, hsl(262, 66%, 38%) 65%,
+      hsl(270, 60%, 65%) 82%;
+
+    /* Mondilla Connect Colors */
+    --mondilla-cyan: #00d4ff;
+    --mondilla-blue: #3b82f6;
+    --mondilla-purple: #8b5cf6;
+    --mondilla-yellow: #fbbf24;
+    --mondilla-red: #ef4444;
+  }
+
+  html {
+    @apply font-dmSans;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white;
+  }
+
+  /* Dark mode styles */
+  .dark {
+    @apply bg-black text-white;
+  }
+
+  /* Light mode styles (if needed) */
+  .light {
+    @apply bg-white text-black;
+  }
+
+  .gradient-primary {
+    --tw-gradient-stops: var(--rainbow-gradient);
+  }
+
+  .gradient-secondary {
+    --tw-gradient-stops: var(--purple-gradient);
+  }
+
+  .bg-hero {
+    @apply bg-[linear-gradient(to_bottom,)];
+    --tw-gradient-stops: #000, #200D42_34%, #4F21A1_65%, #A46EDB_82%;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gradient-to-b from-cyan-400 to-purple-500;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-to-b from-cyan-300 to-purple-400;
+  }
+
+  /* Focus styles */
+  *:focus {
+    @apply outline-none ring-2 ring-cyan-400/50 ring-offset-2 ring-offset-black;
+  }
+
+  /* Selection styles */
+  ::selection {
+    @apply bg-cyan-400/20 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 px-6 py-3 font-medium text-white transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg border border-white/20 bg-white/10 px-6 py-3 font-medium text-white transition-all duration-300 hover:bg-white/20;
+  }
+
+  .card {
+    @apply rounded-xl border border-white/20 bg-white/5 p-6 backdrop-blur-sm;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border bg-white/5 px-4 py-3 text-white placeholder-white/50 transition-all focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50;
+  }
+}
