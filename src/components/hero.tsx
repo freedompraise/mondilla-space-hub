@@ -7,7 +7,7 @@ export function Hero() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
+    transition: {
         staggerChildren: 0.2,
         delayChildren: 0.1
       }
@@ -59,7 +59,7 @@ export function Hero() {
               Work together,{' '}
               <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                 wherever you are
-              </span>
+            </span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -85,16 +85,16 @@ export function Hero() {
           </motion.div>
 
           {/* Illustration */}
-          <motion.div
+            <motion.div
             className="relative"
             variants={itemVariants}
             initial="hidden"
             animate="visible"
           >
-            <div className="relative w-full max-w-lg mx-auto">
+            <div className="relative w-full max-w-lg mx-auto px-4 sm:px-0">
               {/* Main illustration container */}
-              <motion.div
-                className="relative bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl p-8 border border-white/10 backdrop-blur-sm"
+            <motion.div
+                className="relative bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl p-4 sm:p-6 md:p-8 border border-white/10 backdrop-blur-sm"
                 animate={{
                   y: [0, -10, 0],
                   rotate: [0, 1, 0]
@@ -113,23 +113,23 @@ export function Hero() {
                     <div className="space-y-1">
                       <div className="h-2 bg-white/30 rounded w-3/4"></div>
                       <div className="h-2 bg-white/20 rounded w-1/2"></div>
-                    </div>
-                  </div>
+          </div>
+        </div>
                   <div className="bg-white/10 rounded-lg p-3 border border-white/20">
                     <div className="w-full h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-md mb-2"></div>
                     <div className="space-y-1">
                       <div className="h-2 bg-white/30 rounded w-2/3"></div>
                       <div className="h-2 bg-white/20 rounded w-1/3"></div>
                     </div>
-                  </div>
+        </div>
                   <div className="bg-white/10 rounded-lg p-3 border border-white/20">
                     <div className="w-full h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-md mb-2"></div>
                     <div className="space-y-1">
                       <div className="h-2 bg-white/30 rounded w-4/5"></div>
                       <div className="h-2 bg-white/20 rounded w-2/5"></div>
-                    </div>
-                  </div>
-                </div>
+        </div>
+      </div>
+    </div>
 
                 {/* Chat interface */}
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
